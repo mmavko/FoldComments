@@ -3,9 +3,10 @@ import sublime, sublime_plugin
 class FoldUnfoldCommentsCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         view = self.view
-        comments = view.find_by_selector('comment')
+        comments = filter(lambda region: len(view.lines(region)) > 1, view.find_by_selector('comment'))
 
-        if view.fold(comments[0]):
-            view.fold(comments)
-        else:
-            view.unfold(comments)
+        if len(comments) > 0:
+            if view.fold(comments[0]):
+                view.fold(comments)
+            else:
+                view.unfold(comments)
