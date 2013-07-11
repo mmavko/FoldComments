@@ -1,0 +1,6 @@
+[
+    {
+        "caption": "Fold/Unfold Comments",
+        "command": "fold_unfold_comments"
+    }
+]

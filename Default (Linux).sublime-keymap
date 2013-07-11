@@ -1,0 +1,3 @@
+[
+  { "keys": ["ctrl+shift+forward_slash"], "command": "fold_unfold_comments" }
+]
